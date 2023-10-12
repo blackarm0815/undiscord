@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name            Undiscord
-// @description     Delete all messages in a Discord channel or DM (Bulk deletion)
+// @name            undiscordSlow
+// @description     Delete all messages in a Discord channel or DM (Bulk deletion) extra slow
 // @version         5.2.3
-// @author          victornpb
-// @homepageURL     https://github.com/victornpb/undiscord
-// @supportURL      https://github.com/victornpb/undiscord/discussions
+// @author          blackarm0815
+// @homepageURL     https://github.com/blackarm0815/undiscord
+// @supportURL      
 // @match           https://*.discord.com/app
 // @match           https://*.discord.com/channels/*
 // @match           https://*.discord.com/login
 // @license         MIT
-// @namespace       https://github.com/victornpb/deleteDiscordMessages
-// @icon            https://victornpb.github.io/undiscord/images/icon128.png
+// @namespace       https://github.com/victornpb/undiscord
+// @icon            
 // @downloadURL     https://raw.githubusercontent.com/victornpb/deleteDiscordMessages/master/deleteDiscordMessages.user.js
 // @contributionURL https://www.buymeacoffee.com/vitim
 // @grant           none
@@ -328,7 +328,7 @@
                         <a href="{{WIKI}}/delay" title="Help" target="_blank" rel="noopener noreferrer">help</a>
                     </legend>
                     <div class="input-wrapper">
-                        <input id="searchDelay" type="range" value="30000" step="100" min="100" max="60000">
+                        <input id="searchDelay" type="range" value="20000" step="100" min="100" max="40000">
                         <div id="searchDelayValue"></div>
                     </div>
                 </fieldset>
@@ -338,7 +338,7 @@
                         <a href="{{WIKI}}/delay" title="Help" target="_blank" rel="noopener noreferrer">help</a>
                     </legend>
                     <div class="input-wrapper">
-                        <input id="deleteDelay" type="range" value="1000" step="50" min="50" max="10000">
+                        <input id="deleteDelay" type="range" value="20000" step="50" min="50" max="400000">
                         <div id="deleteDelayValue"></div>
                     </div>
                     <br>
