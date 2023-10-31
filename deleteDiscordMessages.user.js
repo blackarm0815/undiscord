@@ -1462,8 +1462,8 @@ body.undiscord-pick-message.after [id^="message-content-"]:hover::after {
 	  const minDate = $('input#minDate').value.trim();
 	  const maxDate = $('input#maxDate').value.trim();
 	  //advanced
-	  const searchDelay = parseInt($('input#searchDelay').value.trim());
-	  const deleteDelay = parseInt($('input#deleteDelay').value.trim());
+	  const searchDelay = parseInt($('input#searchDelay').value.trim()) * 1000;
+	  const deleteDelay = parseInt($('input#deleteDelay').value.trim()) * 1000;
 	 
 	  // token
 	  const authToken = $('input#token').value.trim() || fillToken();
