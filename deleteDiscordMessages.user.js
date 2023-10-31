@@ -328,7 +328,7 @@
                         <a href="{{WIKI}}/delay" title="Help" target="_blank" rel="noopener noreferrer">help</a>
                     </legend>
                     <div class="input-wrapper">
-                        <input id="searchDelay" type="range" value="60" step="1" min="10" max="300">
+                        <input id="searchDelay" type="range" value="60000" step="1000" min="1000" max="300000">
                         <div id="searchDelayValue"></div>
                     </div>
                 </fieldset>
@@ -338,7 +338,7 @@
                         <a href="{{WIKI}}/delay" title="Help" target="_blank" rel="noopener noreferrer">help</a>
                     </legend>
                     <div class="input-wrapper">
-                        <input id="deleteDelay" type="range" value="60" step="1" min="10" max="300">
+                        <input id="deleteDelay" type="range" value="60000" step="1000" min="1000" max="300000">
                         <div id="deleteDelayValue"></div>
                     </div>
                     <br>
@@ -1328,20 +1328,20 @@ body.undiscord-pick-message.after [id^="message-content-"]:hover::after {
 	  $('button#getToken').onclick = () => $('input#token').value = fillToken();
 
 	  // sync delays
-	  $('input#searchDelay').onchange = (e) => { // magnus
+	  $('input#searchDelay').onchange = (e) => {
 	    const v = parseInt(e.target.value);
-	    if (v) undiscordCore.options.searchDelay = v * 1000;
+	    if (v) undiscordCore.options.searchDelay = v;
 	  };
 	  $('input#deleteDelay').onchange = (e) => {
 	    const v = parseInt(e.target.value);
-	    if (v) undiscordCore.options.deleteDelay = v * 1000;
+	    if (v) undiscordCore.options.deleteDelay = v;
 	  };
 
 	  $('input#searchDelay').addEventListener('input', (event) => {
-	    $('div#searchDelayValue').textContent = event.target.value + 's';
+	    $('div#searchDelayValue').textContent = event.target.value + 'ms';
 	  });
 	  $('input#deleteDelay').addEventListener('input', (event) => {
-	    $('div#deleteDelayValue').textContent = event.target.value + 's';
+	    $('div#deleteDelayValue').textContent = event.target.value + 'ms';
 	  });
 
 	  // import json
@@ -1462,8 +1462,8 @@ body.undiscord-pick-message.after [id^="message-content-"]:hover::after {
 	  const minDate = $('input#minDate').value.trim();
 	  const maxDate = $('input#maxDate').value.trim();
 	  //advanced
-	  const searchDelay = parseInt($('input#searchDelay').value.trim()) * 1000;
-	  const deleteDelay = parseInt($('input#deleteDelay').value.trim()) * 1000;
+	  const searchDelay = parseInt($('input#searchDelay').value.trim());
+	  const deleteDelay = parseInt($('input#deleteDelay').value.trim());
 	 
 	  // token
 	  const authToken = $('input#token').value.trim() || fillToken();
