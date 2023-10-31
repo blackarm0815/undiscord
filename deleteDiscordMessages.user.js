@@ -328,7 +328,7 @@
                         <a href="{{WIKI}}/delay" title="Help" target="_blank" rel="noopener noreferrer">help</a>
                     </legend>
                     <div class="input-wrapper">
-                        <input id="searchDelay" type="range" value="60000" step="1000" min="10000" max="300000">
+                        <input id="searchDelay" type="range" value="60" step="1" min="10" max="300">
                         <div id="searchDelayValue"></div>
                     </div>
                 </fieldset>
@@ -338,7 +338,7 @@
                         <a href="{{WIKI}}/delay" title="Help" target="_blank" rel="noopener noreferrer">help</a>
                     </legend>
                     <div class="input-wrapper">
-                        <input id="deleteDelay" type="range" value="60000" step="1000" min="10000" max="300000">
+                        <input id="deleteDelay" type="range" value="60" step="1" min="10" max="300">
                         <div id="deleteDelayValue"></div>
                     </div>
                     <br>
@@ -1328,20 +1328,20 @@ body.undiscord-pick-message.after [id^="message-content-"]:hover::after {
 	  $('button#getToken').onclick = () => $('input#token').value = fillToken();
 
 	  // sync delays
-	  $('input#searchDelay').onchange = (e) => {
+	  $('input#searchDelay').onchange = (e) => { // magnus
 	    const v = parseInt(e.target.value);
-	    if (v) undiscordCore.options.searchDelay = v;
+	    if (v) undiscordCore.options.searchDelay = v * 1000;
 	  };
 	  $('input#deleteDelay').onchange = (e) => {
 	    const v = parseInt(e.target.value);
-	    if (v) undiscordCore.options.deleteDelay = v;
+	    if (v) undiscordCore.options.deleteDelay = v * 1000;
 	  };
 
 	  $('input#searchDelay').addEventListener('input', (event) => {
-	    $('div#searchDelayValue').textContent = event.target.value + 'ms';
+	    $('div#searchDelayValue').textContent = event.target.value + 's';
 	  });
 	  $('input#deleteDelay').addEventListener('input', (event) => {
-	    $('div#deleteDelayValue').textContent = event.target.value + 'ms';
+	    $('div#deleteDelayValue').textContent = event.target.value + 's';
 	  });
 
 	  // import json
